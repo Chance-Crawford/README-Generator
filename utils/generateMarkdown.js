@@ -17,13 +17,13 @@ function renderLicenseBadge(answerObj) {
     return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
   }
   else if(license === "Apache"){
-    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+    return `[![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
   }
   else if(license === "GPL 2.0"){
     return `[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`;
   }
   else if(license === "BSD"){
-    return `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`;
+    return `[![License: BSD](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`;
   }
   else{
     return ``;
@@ -79,7 +79,7 @@ function renderSections(answerObj) {
   // by seeing if it is a property
   // within the object
   if(answerObj.hasOwnProperty("installation")){
-    
+
     // add link in table of contents to section
     tableOfContents += `
   * [Installation](#installation)  
@@ -142,14 +142,22 @@ function renderSections(answerObj) {
   }
 
 
-  if(answerObj.hasOwnProperty("questions")){
+  if(answerObj.hasOwnProperty("questionGithub")){
     tableOfContents += `
   * [Questions](#questions)
     `;
 
     sectionString += `
   ## Questions
-  ${answerObj.questions}
+  Github: https://github.com/${answerObj.questionGithub}
+    ` 
+  }
+
+
+  if(answerObj.hasOwnProperty("questionEmail")){
+
+    sectionString += `
+  ${answerObj.questionEmail}
     ` 
   }
 

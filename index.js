@@ -173,8 +173,29 @@ const questions = [
     },
     {
         type: "input",
-        name: "questions",
-        message: "Please enter a way to contact you for questions:",
+        name: "questionGithub",
+        message: "Please enter your GitHub username for the questions section:",
+        validate: questions =>{
+            if(questions){
+              return true;
+            }
+            else{
+              console.log("Please enter your GitHub username!");
+              return false;
+            }
+        },
+        when: ({ sections }) => {
+            if (sections.includes("Questions")) {
+              return true;
+            } else {
+              return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "questionEmail",
+        message: "Please enter your email for the questions section and any other contact info:",
         validate: questions =>{
             if(questions){
               return true;
