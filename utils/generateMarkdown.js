@@ -70,24 +70,42 @@ function renderSections(answerObj) {
     return ``;
   }
 
+  let tableOfContents = `
+  ## Table Of Contents 
+  `;
+
   // checks if the user selected to include the section
   // by seeing if it is a property
   // within the object
   if(answerObj.hasOwnProperty("installation")){
+    tableOfContents += `
+  * [Installation](#installation)  
+    `;
+
     sectionString += `
   ## Installation
   ${answerObj.installation}
-    ` 
+    `; 
   }
 
+
   if(answerObj.hasOwnProperty("usage")){
+    tableOfContents += `
+  * [Usage](#usage)
+    `;
+
     sectionString += `
   ## Usage
   ${answerObj.usage}
     ` 
   }
 
+
   if(answerObj.hasOwnProperty("license")){
+    tableOfContents += `
+  * [License](#license)
+    `;
+
     sectionString += `
   ## License
   ${answerObj.license}
@@ -96,35 +114,55 @@ function renderSections(answerObj) {
   }
 
   if(answerObj.hasOwnProperty("contributing")){
+    tableOfContents += `
+  * [Contributing](#contributing)
+    `;
+
     sectionString += `
   ## Contributing
   ${answerObj.contributing}
     ` 
   }
 
+
   if(answerObj.hasOwnProperty("tests")){
+    tableOfContents += `
+  * [Tests](#tests)
+    `;
+
     sectionString += `
   ## Tests
   ${answerObj.tests}
     ` 
   }
 
+
   if(answerObj.hasOwnProperty("questions")){
+    tableOfContents += `
+  * [Questions](#questions)
+    `;
+
     sectionString += `
   ## Questions
   ${answerObj.questions}
     ` 
   }
 
+
   if(answerObj.hasOwnProperty("website")){
+    tableOfContents += `
+  * [Website](#website)
+    `;
+
     sectionString += `
   ## Website
   ${answerObj.website}
     ` 
   }
 
+
   // returns string with all sections added that the user chose
-  return sectionString;
+  return tableOfContents + sectionString;
 }
 
 
