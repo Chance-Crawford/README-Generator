@@ -1,38 +1,48 @@
 
-  # e
-  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+  # My project
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
-  feefefef
+  A project made by me
   
   ## Table Of Contents 
   
   * [Installation](#installation)  
     
+  * [Usage](#usage)
+    
   * [License](#license)
     
   * [Contributing](#contributing)
+    
+  * [Tests](#tests)
     
   * [Questions](#questions)
     
   * [Website](#website)
     
   ## Installation
-  ewfffffffffffffffffff
+  Just clone the GitHub repo! Then npm init...
+    
+  ## Usage
+  Use is easy
     
   ## License
-  GPL 3.0
-  https://www.gnu.org/licenses/gpl-3.0.en.html
+  MIT
+  https://opensource.org/licenses/MIT
     
   ## Contributing
-  ewffwefeffew
+  Anyone can contribute
+    
+  ## Tests
+  Any test
     
   ## Questions
-  Github: https://github.com/fffffffffffff
+  Github: https://github.com/Chance-Crawford
     
-  wwwwwwwwwwww
+  randomemail@gmail.com
     
   ## Website
-  e
+  www.google.com
     
   
