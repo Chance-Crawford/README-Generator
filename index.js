@@ -4,6 +4,9 @@ const fs = require("fs");
 
 const inquirer = require("inquirer");
 
+// custom module created in generateMarkdown.js
+const generateMarkdown = require("./utils/generateMarkdown.js");
+
 // questions for inquirer to prompt.
 // inquirer has them go one at a time starting
 // at first object.
@@ -226,4 +229,6 @@ function promptQuestions(){
 
 
 // events
-promptQuestions().then(data => {console.log(data);});
+promptQuestions()
+.then(answers => { return generateMarkdown(answers); })
+.then(markdownString => { console.log(markdownString); });
