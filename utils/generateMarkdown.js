@@ -70,6 +70,7 @@ function renderSections(answerObj) {
     return ``;
   }
 
+  // table of contents above all sections
   let tableOfContents = `
   ## Table Of Contents 
   `;
@@ -78,10 +79,14 @@ function renderSections(answerObj) {
   // by seeing if it is a property
   // within the object
   if(answerObj.hasOwnProperty("installation")){
+    
+    // add link in table of contents to section
     tableOfContents += `
   * [Installation](#installation)  
     `;
 
+    // also add section itself and what the user
+    // wrote for the section.
     sectionString += `
   ## Installation
   ${answerObj.installation}

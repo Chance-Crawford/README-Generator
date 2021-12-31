@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 
 const fs = require("fs");
 
@@ -6,6 +6,7 @@ const inquirer = require("inquirer");
 
 // custom module created in generateMarkdown.js
 const generateMarkdown = require("./utils/generateMarkdown.js");
+
 
 // questions for inquirer to prompt.
 // inquirer has them go one at a time starting
@@ -217,12 +218,33 @@ const questions = [
 
 
 // function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, markdownString) {
+    console.log(markdownString);
+
+    return new Promise((resolve, reject) =>{
+
+        fs.writeFile(fileName, markdownString, err =>{
+            if(err){
+                reject(err); 
+                // return so promise doesnt accidentally activate resolve function as well.
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: "README created!"
+            });
+        });
+
+    });
+}
+
+
 
 // uses inquirer to go through array of question objects and prompt the user
 function promptQuestions(){
     // inquirer returns a promise which can THEN be turned into an object containing
-    // the users answer to each question as the value of a key value pair.
+    // the user's answer to each question as the value of a key value pair.
     // ex. { title: my-project, description: "a project i made" }
     return inquirer.prompt(questions);
 }
@@ -231,4 +253,5 @@ function promptQuestions(){
 // events
 promptQuestions()
 .then(answers => { return generateMarkdown(answers); })
-.then(markdownString => { console.log(markdownString); });
+.then(markdownString => { return writeToFile("./dist/README.md", markdownString); })
+.catch(err => { console.log(err); });
